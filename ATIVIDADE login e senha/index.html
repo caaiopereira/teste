@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança e Versionamento</title>
+
+    <script>
+        function validar(){
+            if((document.login.usuario.value == "a") && (document.login.password.value == "a")){
+                return true;
+            } else {
+                alert("Usuário ou senha inválidos!");
+                document.login.password.focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="login" action="confirmar.html" method="GET" onsubmit="return validar()">
+        Usuário:<br>
+        <input type="text" id="usuario" name="usuario"><br>
+        Senha:<br>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Entrar">
+    </form>
+</body>
+</html>

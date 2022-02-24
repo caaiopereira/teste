@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança e Versionamento</title>
+
+    <script>
+        var getUrlParameter = function getUrlParameter(sParam){
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for(i = 0; i < sURLVariables.length; i++){
+                sParameterName = sURLVariables[i].split("=");
+
+                if(sParameterName[0] === sParam){
+                    return sParameterName[1] === undefined ? true : sParameterName;
+            }
+            return sURLVariables;
+        }
+}
+    function isUsuarioLogado(usuario){
+         if(usuario == "" ){
+             window.location.replace('erro.html');
+        }
+    }
+    isUsuarioLogado(getUrlParameter('usuario'));
+
+//
+    </script>
+</head>
+<body>
+    <h1>Seja bem vindo!</h1>
+</body>
+</html>
